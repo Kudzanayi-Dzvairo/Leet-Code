@@ -18,5 +18,9 @@ function confirmEnding(str, target) {
     }
   
   }
+function confirmEnding2(str, target) {
   
-  confirmEnding("Bastian", "n")
+    return(str.slice(str.length - target.length) === target)
+  }
+  
+  console.log(confirmEnding2("Bastian", "n"))
