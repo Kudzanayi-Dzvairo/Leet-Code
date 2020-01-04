@@ -1,3 +1,6 @@
+//We need to reduce the length of the string or truncate it if it is longer than the given maximum length specified and add ... to the end. 
+//If it is not that long then we keep it as is.
+
 function truncateString(str, num) {
     // Clear out that junk in your trunk
     
@@ -11,4 +14,10 @@ function truncateString(str, num) {
     return str;
   }
   
-  truncateString("A-tisket a-tasket A green and yellow basket", 8);
+function truncateString2(str, num) {
+   
+    return str.length > num ? str.slice(0,num) + '...' : str
+
+}
+  
+  console.log(truncateString2("A-tisket a-tasket A green and yellow basket", 8));
