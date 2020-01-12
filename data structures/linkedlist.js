@@ -1,6 +1,6 @@
-10-->15-->16
+// 10-->15-->16
 
-let myLinkedList = {
+let ll = {
     head: {
         value:  10, 
         next: {
@@ -14,7 +14,20 @@ let myLinkedList = {
 }
 
 class LinkedList {
-    constructor(value)
+    constructor(value){
+        this.head = {
+            value: value,
+            next:null
+        }
+        this.tail = this.head;
+        this.length = 1;
+    }
+
+    append(value){
+        
+    }
 }
 
-const myLinkedList = new LinkedList()
+let myLinkedList = new LinkedList(10)
+
+console.log(myLinkedList)
