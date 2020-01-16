@@ -105,6 +105,21 @@ class LinkedList {
 
     }
 
+    remove(index){
+
+        //find and save the leader node
+        const leader = this.traverseToIndex(index-1)
+        //find the node you'd like to remove
+        const removed = leader.next
+        //connect leader.next to the node after the element we wish to remove
+         leader.next = removed.next
+    
+        this.length --
+
+        return this.printList
+
+    }
+
 
 }
 
@@ -114,5 +129,7 @@ myLinkedList.append(5)
 myLinkedList.append(16)
 myLinkedList.prepend(12)
 myLinkedList.insert(2, 45)
+console.log(myLinkedList.printList())
+myLinkedList.remove(2)
 console.log(myLinkedList.printList())
 // console.log(myLinkedList)
