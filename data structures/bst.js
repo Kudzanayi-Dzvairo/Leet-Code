@@ -46,7 +46,30 @@ class BinarySearchTree {
 
     }
     lookup(value){
-
+        //check if root is empty 
+        if(!this.root){
+            return false
+        }
+        //set currentNode to root
+        let currentNode = this.root
+        //while currentNode is true
+        while(currentNode){
+        //if value is less then currentNode
+            if(value < currentNode.value){
+                //go left
+                currentNode = currentNode.left
+        // if value is greater than currentNode
+            } else if (value > currentNode.value){
+                //go right
+                currentNode = currentNode.right
+        //if value is = to currentNode 
+            } else if (currentNode.value === value){
+                //return value 
+                return currentNode 
+            }
+        }
+        //if value does not exist, return value 
+        return false
     }
 }
 
