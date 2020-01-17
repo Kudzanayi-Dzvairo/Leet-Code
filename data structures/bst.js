@@ -12,6 +12,37 @@ class BinarySearchTree {
     }
 
     insert(value){
+        //create new Node
+        const newNode = new Node(value)
+        //if there is no root set root to new node
+        if(this.root === null){
+            this.root = newNode
+        } else {
+            //start traversing from root
+            let currentNode = this.root;
+            //continue to traverse while true
+            while(true){
+                //if the node is greater than that of the value go left
+                if(value < currentNode.value){
+                    //LEFT
+                    //if there is no curentNode.left set new Node
+                    if(!currentNode.left){
+                        currentNode.left = newNode;
+                        return this;
+                    }
+                    // or set currentNode to currentNode.left and continue traversal
+                    currentNode = currentNode.left
+                } else {
+                    //right
+                    // see steps for left above
+                    if(!currentNode.right){
+                        currentNode.right = newNode;
+                        return this
+                    }
+                    currentNode = currentNode.right
+                }
+            }
+        }
 
     }
     lookup(value){
