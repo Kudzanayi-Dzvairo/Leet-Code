@@ -12,6 +12,17 @@ function myReplace(str, before, after) {
     // Now replace the original str with the editied one
     str = str.replace(before, after)
   }
+
+  function myReplace(str, before, after){
+
+    if(before.charAt(0)===before(0).toUpperCase()){
+        //We check if first letter is capitalized
+        str = str.replace(before,after.charAt(0).toUpperCase() + after.slice(1))
+        //Change after to be capitalized
+    }
+      str = str.replace(before, after)
+      //replace before string with after string 
+  }
   
   myReplace("A quick brown fox jumped over the lazy dog", "jumped", "leaped");
   

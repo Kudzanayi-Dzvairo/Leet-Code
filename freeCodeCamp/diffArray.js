@@ -23,4 +23,27 @@ function diffArray(arr1, arr2) {
         
       }
 
+      funtion diffArray3(arr1, arr2){
+        var holderArray = [];
+
+        for(var i=0; i< arr1.length; i++){
+          //iterate through array 1
+          if(arr2.indexOf(arr1[i]) === -1){
+            //check if element is contained in array 2
+            holderArray.push(arr1[i])
+            //if not push element into holder array
+          }
+
+          //same shit
+        for(var j=0; j<arr2.length; j++){
+          if(arr1.indexOf(arr2[j])=== - 1){
+            holderArray.push(arr2[j])
+          }
+        }
+
+        return holderArray
+
+        }
+      }
+
       console.log(diffArray([1, "calf", 3, "piglet"], [1, "calf", 3, 4]))

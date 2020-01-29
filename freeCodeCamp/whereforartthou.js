@@ -46,6 +46,22 @@ function whatIsInAName(collection, source) {
         })
     })
   }
+
+  function where(collection, source){
+      //takes larger input colection and compares it with the selection needed aka source
+      var arr = collection.filter(item => {
+          //use filter and return true value;
+          for(var i in source){
+              //check value in source and compare with item 
+              if(source[i]!= item[i]){
+                  //do not add if false
+                  return false
+              }
+          }
+          //add if true 
+          return true
+      })
+  }
   
   // test here
   console.log(whatIsInAName(

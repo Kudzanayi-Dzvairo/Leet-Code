@@ -26,3 +26,26 @@ function fearNotLetter2(){
     return missing
 
 }
+
+function fearNotLetter3(){
+    var alphabet = "abcdefghijklmnopqrstuvwxyz"
+    //create a string that stores alphabet
+    alphabet= alphabet.split("")
+    //split alphabet into letter character array
+
+    str=str.split('')
+    //split input string into character array
+
+    if(str[0]!= 'a'){
+        return undefined
+    }
+    //if our 1st leter is not an 'a' return undefined 
+
+    for(var i=0; i <str.length; i++){
+        if(str[i] !=alphabet[i]){
+            return alphabet[i]
+        }
+    }
+
+    return str
+}
