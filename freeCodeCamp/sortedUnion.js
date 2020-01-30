@@ -46,7 +46,7 @@ function uniteUnique2(arr){
     return result
 }
 
-funtion uniteUnique3(arr){
+function uniteUnique3(arr){
     let newArr;
 
     let args = Arry.prototype.slice.call(arguments)
@@ -60,4 +60,25 @@ funtion uniteUnique3(arr){
     }
 
     return newArr
+}
+
+function uniteArray(arr){
+    let placeHolderArray = arr1
+    //create duplicate array from original array
+    for(let i = 0; i<arguments.length; i++){
+        //itterates through the length of arguments 
+        for(letj=0; j<arguments.length; j++){
+            //iterates through current index value of arguments
+            if(placeHolderArray.indexOF(Arguements[i][j])=== -1){
+                //check if array contains values of arguments
+                // returns -1 if it does not 
+                placeHolderArray.push(arguments[i][j])
+                //add it to the end of the placeholder array
+            }
+        }
+    }
+
+    arr1 = placeholder;
+    //set original array to placeholder array
+    return arr1
 }
