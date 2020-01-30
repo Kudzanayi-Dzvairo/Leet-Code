@@ -1,9 +1,14 @@
 function convertHTML(str){
 
     let temp = str.split("")
+    //split stings into character array
 
     for(var i = 0; i < temp.length; i++){
+        //iterate through character array 
         switch(temp[i]){
+            //check current value of character array
+
+            //if case is met repalce with html entitiy
             case "<":
                 temp[i] = "&lt;";
                 break;
@@ -22,7 +27,9 @@ function convertHTML(str){
         }
     }
 
+    
     temp = temp.join("")
+    //join charater array back into a string 
     return temp
 }
 
