@@ -20,22 +20,36 @@
 // console.log(person.address.city)
 // console.log(person["address"]["country"])
 
-var Chipo = {
-    firstname: "Rutendo",
-    middlename: "Chipo",
-    lastname: "Dzvairo",
-    address: {
-        street: '25 Zimre Way',
-        city: "Harare",
-        country: "Zimbabwe"
-    }
-}
+// var Chipo = {
+//     firstname: "Rutendo",
+//     middlename: "Chipo",
+//     lastname: "Dzvairo",
+//     address: {
+//         street: '25 Zimre Way',
+//         city: "Harare",
+//         country: "Zimbabwe"
+//     }
+// }
 
-function greet(person){
-    console.log("Hi " + person.firstname)
-}
+// function greet(person){
+//     console.log("Hi " + person.firstname)
+// }
 
-greet(Chipo)
-greet({firstname: "Farai",
-lastname: "Dzvairo"
-})
+// greet(Chipo)
+// greet({firstname: "Farai",
+// lastname: "Dzvairo"
+// })
+
+var greet = 'Hello'
+var greet = 'Hola'
+
+console.log(greet)
+
+var english = {}
+var spanish = {}
+
+english.greet = 'Hello!';
+spanish.greet = 'Hola!'
+
+
+console.log(english.greet)
