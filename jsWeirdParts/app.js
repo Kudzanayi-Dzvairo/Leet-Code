@@ -1,11 +1,1 @@
-function b(){
-  console.log(myVar)
-}
-
-function a(){
-    var myVar = 3
-    b()
-}
-
-var myVar = 1;
-a()
+console.log( 3 < 2 < 1)
