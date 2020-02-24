@@ -23,7 +23,7 @@ class Stack {
         }else{
             const holdingPointer = this.top
             this.top = newNode
-            this.top.nezt = holdingPointer
+            this.top.next = holdingPointer
         }
         this.length ++
         return this 
