@@ -49,3 +49,42 @@ function isVowel(x) {
   result = x == "A" || x == "E" || x == "I" || x == "O" || x == "U" || x == "a" || x == "e" || x == "i" || x == "o" || x == "u";
   return result;
 }
+
+
+//Solution 1
+
+var toGoatLatin = function(S){
+    const vowels = new Set(['a','e','i','o','u','A','E','I','O','U'])
+    return S.split(' ')
+    .map((w,i) =>
+    vowels.has(w[0])
+    ? w + 'ma' + 'a'.repeat(i + 1)
+    : w.slice(1) + w[0] + 'ma' + 'a'.repeat(i + 1)
+    )
+    .join(' ')
+}
+
+//Solution 2
+
+var toGoatLatin = function(S){
+    const result = []
+    const words = S.split(' ');
+    const vowels = new Set(['a','e','i','o','u'])
+    let i = 0 
+    for(const word of  words){
+        let temp = []
+
+        if(vowels.has(word[0].toLowerCase())){
+            temp.push(word)
+        } else {
+            temp.push(word.substring(1))
+            temp.push(word[0])
+        }
+
+        temp.push('ma')
+        temp.push("a".repeat(i + 1))
+        result.push(temp.join(''))
+        i++
+    }
+    return result.join(' ')
+}

@@ -27,7 +27,9 @@ function mergeSort(array){
 function merge(leftArray, rightArray, array){
     var index = 0; 
 
+    //Both lists have items in them left in them 
     while (leftArray.length && rightArray.length){
+        //Chhose the smaller of the two items and add it to the merged list
         console.log('array is: ', array)
         if(rightArray[0] < leftArray[0]){
             array[index++] = rightArray.shift()
@@ -36,11 +38,13 @@ function merge(leftArray, rightArray, array){
         }
     }
 
+    //grab any lingering items fromt the first list after we've exhausted the second list
     while(leftArray.length){
         console.log('left array is: ', leftArray)
         array[index++] = leftArray.shift()
     }
 
+    //grab any lingering items fromt the second list after we've exhausted the first list
     while(rightArray.length){
         console.log('right array is: ', rightArray)
         array[index++] = rightArray.shift();
