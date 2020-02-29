@@ -39,6 +39,7 @@ function getTemperatureUrl(urls) {
 for(let i = 0; i < urls.length; i++){
 fetch(urls[i])
 .then(response => response.json())
+.then(json => displayTemperatures(json))
 .catch((error) => {
 	console.log(error)
 })
