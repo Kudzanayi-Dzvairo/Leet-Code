@@ -72,3 +72,29 @@ let options = {
   // now title="Menu", rest={height: 200, width: 100}
   alert(rest.height);  // 200
   alert(rest.width);   // 100
+
+  //nested destructuring 
+
+  let options = {
+    size: {
+        width: 100,
+        height: 200
+    },
+    items: ['Cake', 'Donut'],
+    extra: true 
+  };
+
+  let = {
+      size: { // assing size here
+          width,
+          height
+
+      },
+      items: [item1, item2], //asign items here 
+      title = 'Menu' //not present in object so default value used 
+  }
+  console.log(title) //Menu
+  console.log(width) //100
+  console.log(height) //200
+  console.log(item1) //Cake
+  console.log(item2) //Donut
