@@ -75,5 +75,37 @@ const initMinMax = {
     maxReading: Number.MIN_VALUE
 };
 const minMax = readings.reduce(minMaxReducer, initMinMax)
-console.log(minMax)
+// console.log(minMax)
+
+
+// function notEmptyEmail(x){
+//     return (x.email !== null) && (x.email !== undefined)
+// }
+// function getLastSeen(x){
+//  return x.lastSeen
+// }
+// function greater(a,b){
+//     return (a>b) ? a: b
+// }
+// const peopleWithEmail = peopleArr.filter(notEmptyEmail)
+// const lastSeenDates = peopleWithEmail.map(getLastSeen)
+// const mostRecent = lastSeenDates.reduce(greater, '')
+// console.log(mostRecent)
+
+function notEmptyEmail(x) {
+    return (x.email !== null) && (x.email !== undefined)
+  }
+
+  function greater(a, b){
+     return (a > b) ? a : b ; 
+  }
+
+  function notEmptyMostRecent(currentRecent, person) {
+       return (notEmptyEmail(person))
+            ? greater(currentRecent, person.lastSeen)
+            : currentRecent;
+  }
+
+  const mostRecent = peopleArr.reduce(notEmptyMostRecent, '')
+  console.log(mostRecent)
 
