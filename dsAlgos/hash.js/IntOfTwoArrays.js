@@ -16,3 +16,8 @@ var intersection = function(nums1, nums2) {
     }
     return result
 }
+
+var intersection = function(nums1, nums2) {
+    const [a, b] = [new Set(nums1), new Set(nums2)];
+    return [...a].filter(x => b.has(x));
+};
