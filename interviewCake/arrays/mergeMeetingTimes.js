@@ -6,16 +6,35 @@ let times =   [
     { startTime: 9,  endTime: 10 },
   ]
 
-var mergeMeetingTimes = (rangeArray) => {
-       
-    rangeArray.sort((a,b) => a.startTime - b.startTime)
-      // goal is to find a time whenver every one is available
-      // integers represent the number of 30 min blocks from  9am 
-      // wirte a function that mergers ranges 
+var mergeMeetingTimes = (meetings) => {
 
-      // takes array of multiple meetings time ranges and returns an array of condensed ranges
+    //create a dep copy of the meetings array
+    const meetingsCopy = JSON.parse(JSON.stringify(meetings))
+     
+    //Sort by start time
+    var sortedMeetings = meetings.sort((a,b) => a.startTime - b.startTime)
+    
+    //initialize merged meetings with the earliest meeting
+    const mergedMeetings = [sortedMeetings[0]]
 
-     console.log(rangeArray)
+    console.log(sortedMeetings)
+
+    for(let i = 1; i < sortedMeetings.length; i++){
+        const currentMeeting = sortedMeetings[i];
+        
+        const lastMergedMeeting = mergedMeetings[mergedMeetings.length-1]
+     
+        //If the current meeting overlaps with the last merged meeting, use the
+        // later end time of the two 
+        if(currentMeeting.startTime <= lastMergedMeeting.endTime){
+            lastMergedMeeting.endTime = Math.max(lastMergedMeeting.endTime, currentMeeting.endTime)
+        } else {
+
+            //Add the current meeting since it doesn't overlap
+            mergedMeetings.push(currentMeeting)
+        }
+    }
+     return mergedMeetings
 }
 
 console.log(mergeMeetingTimes(times))
