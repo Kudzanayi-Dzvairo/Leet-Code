@@ -1,0 +1,4 @@
+var InFlightTimes = (array, time){
+
+    
+}
