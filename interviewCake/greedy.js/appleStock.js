@@ -1,29 +1,14 @@
-function getMaxProfit(stockPrices) {
-    let maxProfit = 0;
-  
-    // Go through every time
-    for (let outerTime = 0; outerTime < stockPrices.length; outerTime++) {
-  
-      // For each time, go through every other time
-      for (let innerTime = 0; innerTime < stockPrices.length; innerTime++) {
-  
-        // For each pair, find the earlier and later times
-        const earlierTime = Math.min(outerTime, innerTime);
-        const laterTime = Math.max(outerTime, innerTime);
-  
-        // And use those to find the earlier and later prices
-        const earlierPrice = stockPrices[earlierTime];
-        const laterPrice = stockPrices[laterTime];
-  
-        // See what our profit would be if we bought at the
-        // min price and sold at the current price
-        const potentialProfit = laterPrice - earlierPrice;
-  
-        // Update maxProfit if we can do better
-        maxProfit = Math.max(maxProfit, potentialProfit);
-      }
+function maxProfit(stockPrices){
+
+    maxProfits = 0 
+
+    for(let i = 0; i < stockPrices.length-2; i++){
+        for(let j = 1; j < stockPrices.length; j++){
+            let profits = stockPrices[j] - stockPrices[i]
+            maxProfits = Math.max(maxProfits, profits)
+        }
     }
-  
-    return maxProfit;
-  }
-  
+    return maxProfits
+}
+
+console.log(maxProfit([10, 7, 5, 8, 11, 9]))
