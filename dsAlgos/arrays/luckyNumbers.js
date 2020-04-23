@@ -50,3 +50,6 @@ var luckyNumbers = function(matrix){
 } 
 
 console.log(luckyNumbers(matrix)) 
+
+Runtime: 52 ms, faster than 91.17% 
+Memory Usage: 37 MB,  less than 100.00%

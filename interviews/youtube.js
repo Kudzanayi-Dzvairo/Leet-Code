@@ -1,3 +1,48 @@
+
+// function getTempertureUrl(urls) {
+  
+  // if(urls.length === 0){
+    //    return
+// }
+
+// fetch(urls[0])
+// .then(response => response.json())
+// .catch((error) => {
+  // 	urls.shift()
+  // 	getTemperatureUrls(urls)
+  // })
+  
+  
+  // }
+
+  // function getTemperatureUrl(urls) {
+    
+    // for(let i = 0; i < urls.length; i++){
+      // fetch(urls[i])
+      // .then(response => response.json())
+      // .then(json => displayTemperatures(json))
+      // .catch((error) => {
+        // 	console.log(error)
+        // })
+        
+        //    }
+        
+        // }
+        
+        // Interviewer notes:
+        
+        // getTemperatureURLs([A, B, C]) -> getting A fails
+        // now we want B, and we have a way to get the first element in a url array
+        // getTemperatureURLs([B, C]) -> getting B fails
+        // getTemperatureURLs([C]) -> C fails
+        
+        // new Promise((resolve, reject) =>  {
+          //   for (...) {
+            //    … .then(res => res.json()).then(data => resolve(data))
+            //   }
+// });
+
+
 You have an app which you need to have display the temperature:
 
 getTemperatureUrl(urls).then(displayTemperature);
@@ -12,52 +57,13 @@ It turns out the temperature API can be flaky, so your product team comes up wit
 
 Implement the function getTemperatureUrls, which takes an array of URLs (strings) and resolves the best temperature from the array of URLs.
 
-function getTempertureUrl(urls) {
-            
-if(urls.length === 0){
-   return
-}
+urls = ['url/best', 'url/medium', 'url/short']
 
-fetch(urls[0])
-.then(response => response.json())
-.catch((error) => {
-	urls.shift()
-	getTemperatureUrls(urls)
-})
+function getTemperatures(url){
 
-
-}
-
-
-
-
-
-
-
-function getTemperatureUrl(urls) {
-
-for(let i = 0; i < urls.length; i++){
-fetch(urls[i])
-.then(response => response.json())
-.then(json => displayTemperatures(json))
-.catch((error) => {
-	console.log(error)
-})
-
-   }
-
-}
-
-Interviewer notes:
-
-getTemperatureURLs([A, B, C]) -> getting A fails
-now we want B, and we have a way to get the first element in a url array
-getTemperatureURLs([B, C]) -> getting B fails
-getTemperatureURLs([C]) -> C fails
-
-new Promise((resolve, reject) =>  {
-  for (...) {
-   … .then(res => res.json()).then(data => resolve(data))
+  for(let i = 0; i <urls.length; i++){
+    fetch(url[i])
+    .then(response => response.json())
+    .then(data => data)
   }
-});
-
+}
