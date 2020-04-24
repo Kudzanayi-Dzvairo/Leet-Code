@@ -15,3 +15,12 @@ var findDisappearedNumbers = function(nums) {
   return arr
      
  };
+
+ var findDisappearedNumbers = function(nums) {
+    
+    let newArray = [...new Set(nums)]
+    
+    let fullArray = [...Array(nums.length +1).keys()].slice(1)
+                   
+    return fullArray.filter(num => newArray.indexOf(num) == -1)
+   };
