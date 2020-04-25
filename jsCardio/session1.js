@@ -58,15 +58,21 @@ function reverseInteger(num){
 
 function capitalizeLetters(str){
      
-    let array = str.split(' ')
-    let capitalStr = ''
+    // let array = str.split(' ')
+    // let capitalStr = ''
 
-    for(let i = 0; i < array.length; i++){
-       capitalized = array[i].charAt(0).toUpperCase() + array[i].slice(1)
-       capitalStr += capitalized + ' '
-    }
+    // for(let i = 0; i < array.length; i++){
+    //    capitalized = array[i].charAt(0).toUpperCase() + array[i].slice(1)
+    //    capitalStr += capitalized + ' '
+    // }
 
-    return capitalStr
+    return str
+    .toLowerCase()
+    .split(' ')
+    .map(word => word[0].toUpperCase() + word.substr(1))
+    .join(' ')
+
+    // return capitalStr
 }
 
 console.log(capitalizeLetters('i love my life'))
