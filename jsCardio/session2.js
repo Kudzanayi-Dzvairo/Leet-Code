@@ -89,27 +89,3 @@ function letterChanges(str){
    return newStr
 }
 
-// function addAll(){
-  
-//    let args = Array.prototype.slice.call(arguments)
-//    total = 0
-
-//    for(let i = 0; i < args.length; i++){
-//       total += args[i]
-//    }
-   
-//    return total
-// }
-
-function addAll(...numbers){
-
-   // let total = 0
-
-   // numbers.forEach(num => total += num)
-
-   // return total 
-
-   return numbers.reduce((total, num) => total += num, 0)
-}
-
-console.log(addAll(1,2,3,4,5))
