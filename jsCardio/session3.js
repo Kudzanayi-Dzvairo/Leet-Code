@@ -21,7 +21,7 @@ function addAll(...numbers){
     return numbers.reduce((total, num) => total += num, 0)
  }
  
- console.log(addAll(1,2,3,4,5))
+//  console.log(addAll(1,2,3,4,5))
  
  function sumAllPrimes(num){
     let total = 0
@@ -64,4 +64,43 @@ function addAll(...numbers){
     return arr.filter(val => !rest.includes(val))
  }
 
- console.log(seekAndDestroy([2,3,4,6,6,'hello'], 2, 6,))
+//  console.log(seekAndDestroy([2,3,4,6,6,'hello'], 2, 6,))
+
+ function sortByHeight(arr){
+
+    let onesArray = []
+    let heightArray= []
+
+    arr.forEach((val, index) => {
+        if(val === -1){
+            onesArray.push(index)
+        }else{
+            heightArray.push(val)
+        }
+    })
+
+    let sorted = heightArray.sort((a,b) => a - b)
+
+    onesArray.forEach((val, index) => {
+        sorted.splice(onesArray[index], 0, -1)
+    })
+
+    return sorted
+ }
+
+//  console.log(sortByHeight([180, -1, 140, 150, -1, -1, 160, 170]))
+
+ function evenOdd(arr){
+     evenSum = 0
+     oddSum= 0 
+
+     for(let i = 0; i < arr.length; i++){
+      arr[i] % 2 == 0 ? evenSum += arr[i] : oddSum += arr[i]
+     }
+
+     console.log(evenSum)
+
+     return [evenSum, oddSum]
+ }
+
+ console.log(evenOdd([1,2,3,4]))
