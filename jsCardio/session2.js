@@ -75,3 +75,41 @@ function formatStr(str){
    .join('')
 }
 
+function letterChanges(str){
+   let newStr = str.toLowerCase().replace(/[a-z]/gi, char => {
+      if(char === 'z' || char === 'Z'){
+         return a
+      } else {
+         return String.fromCharCode(char.charCodeAt() + 1)
+      }
+   })
+
+   newStr = newStr.replace(/a|e|i|o|u/gi, vowel => vowel.toUpperCase())
+
+   return newStr
+}
+
+// function addAll(){
+  
+//    let args = Array.prototype.slice.call(arguments)
+//    total = 0
+
+//    for(let i = 0; i < args.length; i++){
+//       total += args[i]
+//    }
+   
+//    return total
+// }
+
+function addAll(...numbers){
+
+   // let total = 0
+
+   // numbers.forEach(num => total += num)
+
+   // return total 
+
+   return numbers.reduce((total, num) => total += num, 0)
+}
+
+console.log(addAll(1,2,3,4,5))
