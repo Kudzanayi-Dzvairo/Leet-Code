@@ -69,7 +69,6 @@ result = orders.reduce((acc, order) => {
     return{...acc, [order.status]:(acc[order.status] || 0) + 1}
 }, {})
 
-console.log(result)
 
 
 //implement a reduce 
@@ -84,3 +83,18 @@ function reduce(array, callback, initial){
 
     return acc
 }
+
+function reduce2(array, callback, initial) {
+
+    let acc = initial
+
+    for(let i = 0; i < array.length; i++){
+        acc = callback(acc, array[i], i, array)
+    }
+
+    return acc
+}
+
+result = reduce2([1,2,3], (acc, num) => acc + num, 0)
+
+console.log(result)
