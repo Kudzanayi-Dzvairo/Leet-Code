@@ -13,5 +13,18 @@ function removeDuplicate(str){
   return split.join(' ')
 }
 
+function uniqueValues(str){
 
-console.log(removeDuplicate('This is is a test test string'))
+    let split = str.split(' ')
+    let set = new Set(split)
+
+    return [...set].join(' ')
+
+
+}
+ 
+
+   
+
+
+console.log(uniqueValues('This is is a test test string'))
